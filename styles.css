@@ -344,6 +344,67 @@ h2 { margin: 0; font-size: 38px; line-height: 1.08; font-weight: 600; }
 .path-card h3 { margin: 0; color: var(--gold-pale); font-size: 27px; font-weight: 600; }
 .path-card p { margin: 10px 0 0; color: var(--muted); line-height: 1.65; }
 
+.themes {
+  position: relative;
+  padding: 95px 0;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(93, 44, 132, .2), transparent 27%),
+    radial-gradient(circle at 88% 74%, rgba(231, 186, 104, .07), transparent 25%),
+    var(--night);
+}
+.themes::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .23;
+  background-image:
+    radial-gradient(circle at 15% 30%, #fff 0 1px, transparent 1.5px),
+    radial-gradient(circle at 82% 21%, var(--gold) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 63% 75%, #fff 0 1px, transparent 1.5px);
+  background-size: 290px 260px;
+}
+.themes .section-shell { position: relative; }
+.themes-grid { display: grid; margin-top: 44px; border-bottom: 1px solid var(--line); }
+.theme-item {
+  min-height: 215px;
+  position: relative;
+  padding: 28px 6px 30px 38px;
+  border-top: 1px solid var(--line);
+}
+.theme-symbol {
+  position: absolute;
+  left: 4px;
+  top: 34px;
+  color: var(--gold);
+  font-size: 11px;
+  text-shadow: 0 0 12px rgba(231, 186, 104, .45);
+}
+.theme-item h3 { margin: 0; color: var(--gold-pale); font-size: 26px; line-height: 1.05; font-weight: 600; }
+.theme-item p { margin: 12px 0 0; color: var(--muted); line-height: 1.65; }
+.themes-cta {
+  margin-top: 54px;
+  padding: 34px 0 0;
+  display: grid;
+  gap: 28px;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+.themes-cta-copy { display: flex; align-items: flex-start; gap: 18px; }
+.themes-cta-copy > span {
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--gold-pale);
+  font-size: 20px;
+}
+.themes-cta-copy p { margin: 0; color: #e9e0f0; font-family: var(--serif); font-size: 25px; line-height: 1.28; }
+.themes-cta .button { justify-self: start; }
+
 .consultations { padding: 95px 0; display: grid; gap: 65px; align-items: center; }
 .consultation-art { min-height: 390px; position: relative; display: grid; place-items: center; }
 .consultation-art::before,
@@ -544,6 +605,13 @@ blockquote { max-width: 880px; margin: 0 auto; font-size: 34px; line-height: 1.1
   .scroll-hint i { color: var(--gold); }
   .intro { grid-template-columns: 55px 1fr 1fr; gap: 45px; padding-block: 120px; }
   .path-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .themes { padding-block: 120px; }
+  .themes-grid { grid-template-columns: repeat(2, 1fr); }
+  .theme-item:nth-child(odd) { padding-right: 34px; border-right: 1px solid rgba(231,186,104,.14); }
+  .theme-item:nth-child(even) { padding-left: 54px; }
+  .theme-item:nth-child(even) .theme-symbol { left: 20px; }
+  .themes-cta { grid-template-columns: 1fr auto; align-items: center; }
+  .themes-cta .button { justify-self: end; }
   .consultations { grid-template-columns: 1fr 1fr; gap: 80px; padding-block: 125px; }
   .consultation-copy { max-width: 500px; }
   .contact { padding-block: 120px; }
@@ -564,6 +632,14 @@ blockquote { max-width: 880px; margin: 0 auto; font-size: 34px; line-height: 1.1
   .hero-text { font-size: 16px; }
   h2 { font-size: 52px; }
   .path-card { padding: 38px; }
+  .themes-grid { grid-template-columns: repeat(3, 1fr); }
+  .theme-item,
+  .theme-item:nth-child(odd),
+  .theme-item:nth-child(even) { padding: 34px 28px 36px 45px; border-right: 1px solid rgba(231,186,104,.14); }
+  .theme-item:nth-child(3n) { border-right: 0; }
+  .theme-item .theme-symbol,
+  .theme-item:nth-child(even) .theme-symbol { left: 13px; top: 40px; }
+  .themes-cta-copy p { font-size: 29px; }
   blockquote { font-size: 50px; }
   .whatsapp-float { width: auto; height: 48px; padding: 0 19px; display: flex; gap: 10px; border-radius: 25px; font-size: 20px; }
   .whatsapp-float span { display: inline; font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
